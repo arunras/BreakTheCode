@@ -1,7 +1,7 @@
 > ## Algorithms - Hacking the Code
 
 
-TODO
+TODO - 1
 -----
 * LinkedList
 * Graph
