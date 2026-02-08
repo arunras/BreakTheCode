@@ -20,13 +20,13 @@ class MirrorArray {
     
     // Values: get values from X and Y
     int y = Y[i];
-    int xLeft = X[left];
-    int xRight = X[right];
+    int xyLeft = X[left] * y;
+    int xyRight = X[right] * y;
 
     // Option 1: Pick from left
-    int pickLeft = (y * xLeft) + topDown(i + 1, left + 1);
+    int pickLeft = xyLeft + topDown(i + 1, left + 1);
     // Option 2: Pick from right
-    int pickRight = (y * xRight) + topDown(i + 1, left);
+    int pickRight = xyRight + topDown(i + 1, left);
     
     // Pick: left or right
     int max = Math.max(pickLeft, pickRight);
@@ -47,11 +47,11 @@ class MirrorArray {
         int right = (n - 1) - (i - left);
 
         int y = Y[i];
-        int xLeft = nums[left];
-        int xRight = nums[right];
+        int xyLeft = X[left] * y;
+        int xyRight = X[right] * y;
         
-        int pickLeft = (y * xLeft) + d[i + 1][left + 1];
-        int pickRigt = (y * xRight) + d[i + 1][left];
+        int pickLeft = xyLeft + d[i + 1][left + 1];
+        int pickRigt = xyRight + d[i + 1][left];
 
         dp[i][left] = Math.max(pickLeft, pickRight);
       }
@@ -70,11 +70,11 @@ class MirrorArray {
         int right = (n - 1) - (i - left);
 
         int y = Y[i];
-        int xLeft = nums[left];
-        int xRight = nums[right];
+        int xyLeft = X[left] * y;
+        int xyRight = X[right] * y;
 
-        int pickLeft = (y * xLeft) + next[left + 1];
-        int pickRight = (y * xRight) + next[left];
+        int pickLeft = xyLeft + next[left + 1];
+        int pickRight = xyRight + next[left];
 
         current[left] = Math.max(pickLeft, pickRight);
       }
