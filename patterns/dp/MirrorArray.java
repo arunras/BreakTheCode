@@ -9,8 +9,10 @@ class MirrorArray {
   
   /*--TOP DOWN--*/
   private int topDown(int i, int left) {
+    if (i == m) return 0;
+    if (cache[i][left]) return cache[i][left];
+
     int right = (n - 1) - (i - left);
-    if (cache[i][left]) return cache;
     
     int y = Y[i];
     int xLeft = X[left];
