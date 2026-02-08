@@ -9,20 +9,32 @@ class MirrorArray {
   
   /*--TOP DOWN--*/
   private int topDown(int i, int left) {
+    // Base case: All Y used
     if (i == m) return 0;
+
+    // Cache: return if available
     if (cache[i][left]) return cache[i][left];
 
+    // Calculate right index dynamically
     int right = (n - 1) - (i - left);
     
+    // Values: get values from X and Y
     int y = Y[i];
     int xLeft = X[left];
     int xRight = X[right];
 
+    // Option 1: Pick from left
     int pickLeft = (y * xLeft) + topDown(i + 1, left + 1);
+    // Option 2: Pick from right
     int pickRight = (y * xRight) + topDown(i + 1, left);
     
+    // Pick: left or right
     int max = Math.max(pickLeft, pickRight);
-    cache[i][left] = max 
+
+    // Cache: save result
+    cache[i][left] = max; 
+
+    // Return: current result
     return max;
   }
 
