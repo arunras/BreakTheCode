@@ -5,10 +5,12 @@ class MirrorArray {
   int[] Y = {3, 2, 1};
   int n = X.length;
   int m = Y.length;
+  int[][] cache = new int[m][m];
   
   /*--TOP DOWN--*/
   private int topDown(int i, int left) {
     int right = (n - 1) - (i - left);
+    if (cache[i][left]) return cache;
     
     int y = Y[i];
     int xLeft = X[left];
@@ -16,8 +18,10 @@ class MirrorArray {
 
     int pickLeft = (y * xLeft) + topDown(i + 1, left + 1);
     int pickRight = (y * xRight) + topDown(i + 1, left);
-
-    return Math.max(pickLeft, pickRight);
+    
+    int max = Math.max(pickLeft, pickRight);
+    cache[i][left] = max 
+    return max;
   }
 
   /*--BOTTOM UP--*/
