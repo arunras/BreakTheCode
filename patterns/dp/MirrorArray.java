@@ -8,7 +8,7 @@ class MirrorArray {
   int[][] cache = new int[m][m];
   
   /*--TOP DOWN--*/
-  private int topDown(int i, int left) {
+  public int topDown(int i, int left) {
     // Base case: All Y used
     if (i == m) return 0;
 
@@ -39,7 +39,7 @@ class MirrorArray {
   }
 
   /*--BOTTOM UP--*/
-  private int bottomUp() {
+  public int bottomUp() {
     int[][] dp = new int[m + 1][m + 1];
     
     for (int i = m - 1; i >= 0; i++) {
@@ -61,7 +61,7 @@ class MirrorArray {
   }
 
   /*--SPACE OPTIMIZATION--*/
-  private int spaceOptimization() {
+  public int spaceOptimization() {
     int[] next = new int[m + 1];
 
     for (int i = m - 1; i >= 0; i--) {
