@@ -1,6 +1,6 @@
 /*==42. Trapping Rain Water==*/
 
-class Template {
+class RainWater {
   /*-Input Vars-*/
   int[] height;
   int n = height.length;
