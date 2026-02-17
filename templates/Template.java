@@ -1,7 +1,14 @@
 /*==TEMPLATE==*/
 
 class Template {
-  /*-Input Variables-*/
+  /*-Input Vars-*/
 
-  /*-Output Variables-*/
+  /*-Intermediate Vars-*/
+
+  /*-Output Vars-*/
+
+  public int AAA(int[] arr) {
+
+  }
+
 }
