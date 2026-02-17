@@ -1,4 +1,4 @@
-/*==42. Trapping Rain Water==*/
+/*==11. Container With Most Water==*/
 
 class WaterContainer {
   /*-Input Vars-*/
