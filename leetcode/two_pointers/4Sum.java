@@ -16,6 +16,14 @@ class 4Sum {
 
     for (int i = 0; i < n - 3; i++) {
       if (i > 0 && nums[i] == nums[i - 1]) continue; // Skip duplicate
+      
+      // Optimization: Pruning for i
+      long minSum = (long) nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3];
+      long maxSum = (long) nums[i] + nums[n - 1] + nums[n - 2] + nums[n - 3];
+      if (minSum > target) break;
+      if (maxSum < target) continue;
+
+
       for (int j = i + 1; j < n - 2; j++) {
         if (j > i + 1 && nums[j] == nums[j - 1]) continue; // Skip duplicate
         // 2. Two Pointers
