@@ -2,7 +2,7 @@
 
 class BFS {
 
-  /*--BFS GRAPH--*/
+  /*--GRAPH--*/
   public void bfsGraph(Node root) {
     // 1. BFS Setup
     Queue<Node> q = new LinkedList<>();
@@ -21,6 +21,25 @@ class BFS {
         visited.add(neighbor);
       }
     }
+  }
+
+  /*--TREE--*/
+  public TreeNode bfsTree(TreeNode root) {
+    // 1. BFS Setup
+    Queue<TreeNode> q = new LinkedList<>();
+    q.add(root);
+
+    // 2. Traverse
+    while (!q.isEmpty()) {
+      TreeNode node = q.poll();
+      if (isGoal(node)) return FOUND(node);
+
+      // Check child
+      if (node.left != null) q.add(node.left);
+      if (node.right != null) q.add(node.right;
+    }
+
+    return NOT_FOUND;
   }
 
 }
